@@ -15,13 +15,20 @@ n = len(lines)
 
 # For each line, find the sum of index 2 in the list.
 for line in lines:
-	age = int(line.strip().split(',')[0])
-	total_age += age
-	count = count + int(line.strip().split(',')[2])
-	clicks += int(line.strip().split(',')[3])
-	max_age = max(max_age, age)
+    clean_line = line.strip().split(',')
+    age = int(clean_line[0])
+    total_age += age
+    count = count + int(clean_line[2])
+    clicks += int(clean_line[3])
+    max_age = max(max_age, age)
 
-print 'Average age: {0:.1f}'.format(float(total_age) / n)
-print 'Impression:  {:,}'.format(count)
-print 'CTR:         {0:.2f}%'.format(float(clicks) / count * 100)
-print 'Max age:    ', max_age
+average_age = 'Average age: {0:.1f}'.format(float(total_age) / n)
+impressions = 'Impression:  {:,}'.format(count)
+ctr         = 'CTR:         {0:.2f}%'.format(float(clicks) / count * 100)
+max_age_str = 'Max age:     {0:d}'.format(max_age)
+
+content = average_age + '\n' + impressions + '\n' + ctr + '\n' + max_age_str + '\n'
+print content
+file = open('result.txt', 'w')
+file.write(content)
+file.close()
