@@ -50,13 +50,13 @@ for line in sorted_lines:
         inner_list[7] += 1
 new_list.append(inner_list) # Append the last list which is not appended in the loop
 
-file = open('nyt_new.csv', 'w')
+file = open('nytimes_revised.csv', 'w')
 file.write(new_header + '\n')
 for line in new_list:
     age = '{0:d}'.format(line[0])
     gender = '{0:d}'.format(line[1])
     signed_in = '{0:d}'.format(line[2])
-    avg_clicks = '{0:.1f}'.format(line[3])
+    avg_clicks = '{0:.2f}'.format(line[3])
     avg_impressions = '{0:.1f}'.format(line[4])
     max_clicks = '{0:d}'.format(line[5])
     max_impressions = '{0:d}'.format(line[6])
