@@ -1,4 +1,4 @@
-"age", "gender,", "signed_in", "avg_click", "agv_impressions", "max_click", "max_impressions"
+"age", "gender", "signed_in", "avg_click", "agv_impressions", "max_click", "max_impressions"
 0, 0, 0, 0.14, 5.0, 4, 18
 7, 0, 1, 0.75, 5.0, 1, 7
 7, 1, 1, 0.00, 6.0, 0, 6

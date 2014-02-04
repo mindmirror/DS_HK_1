@@ -4,7 +4,7 @@ import sys
 lines = sys.stdin.readlines()
 lines.pop(0)
 
-new_header = '"age", "gender,", "signed_in", "avg_click", "agv_impressions", "max_click", "max_impressions"'
+new_header = '"age", "gender", "signed_in", "avg_click", "agv_impressions", "max_click", "max_impressions"'
 sorted_lines = sorted(lines, key = lambda line: (int(line.strip().split(',')[0]), int(line.strip().split(',')[1]), int(line.strip().split(',')[4])))
 
 last_age = None
