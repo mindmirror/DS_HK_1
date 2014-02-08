@@ -13,4 +13,4 @@ def calc_ctr(row):
 
 dfg = df[['Age','Gender','Signed_In', 'Impressions','Clicks']].groupby(['Age','Gender','Signed_In']).sum()
 dfg['CTR'] = dfg.apply(calc_ctr, axis = 1)
-dfg.to_csv('nytimes_aggregation.csv')
+dfg.to_csv('nytimes_aggregation.csv', float_format='%.4f')
