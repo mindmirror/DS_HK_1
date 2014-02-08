@@ -1,4 +1,4 @@
-Age,Gender,Signed_In,"('Impressions', 'sum')","('Clicks', 'sum')","('CTR', '')"
+Age,Gender,Signed_In,Impressions,Clicks,CTR
 0,0,0,27414219,777451,0.02835940721127237
 3,0,1,2,0,0.0
 3,1,1,2,0,0.0

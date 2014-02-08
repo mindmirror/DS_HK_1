@@ -11,6 +11,6 @@ def calc_ctr(row):
     ctr = 0 if row['Impressions'] == 0 else float(row['Clicks']) / row['Impressions']
     return ctr
 
-dfg = df[['Age','Gender','Signed_In', 'Impressions','Clicks']].groupby(['Age','Gender','Signed_In']).agg([numpy.sum])
+dfg = df[['Age','Gender','Signed_In', 'Impressions','Clicks']].groupby(['Age','Gender','Signed_In']).sum()
 dfg['CTR'] = dfg.apply(calc_ctr, axis = 1)
 dfg.to_csv('nytimes_aggregation.csv')
