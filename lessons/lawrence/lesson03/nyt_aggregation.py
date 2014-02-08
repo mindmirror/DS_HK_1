@@ -8,7 +8,7 @@ for i in range(1, 31):
     df = df.append(csv)
 
 def calc_ctr(row):
-    ctr = 0 if row['Impressions'] == 0 else float(row['Clicks']) / row['Impressions']
+    ctr = 0.0 if row['Impressions'] == 0 else row['Clicks'] / row['Impressions']
     return ctr
 
 dfg = df[['Age','Gender','Signed_In', 'Impressions','Clicks']].groupby(['Age','Gender','Signed_In']).sum()
