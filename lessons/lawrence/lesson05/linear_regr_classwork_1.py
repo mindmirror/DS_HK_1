@@ -30,9 +30,10 @@ print "Sum of squared residuals: " + str(mean((log_regr.predict(log_body) - log_
 print "R^2: " + str(log_regr.score(log_body, log_brain))
 
 plt.scatter(body, brain)
-plt.plot(body, linear_regr.predict(body), color='blue', linewidth=3)
+plt.plot(body, linear_regr.predict(body), color='blue', linewidth=2)
 mammals = mammals.sort('body')
 sorted_log_body = [[x] for x in mammals['log_body'].values]
 # Convert the log linear model back to normal by exponent
-plt.plot(exp(sorted_log_body), exp(log_regr.predict(sorted_log_body)), color='red', linewidth=3)
+plt.scatter(exp(sorted_log_body), exp(log_regr.predict(sorted_log_body)), color='green')
+plt.plot(exp(sorted_log_body), exp(log_regr.predict(sorted_log_body)), color='red', linewidth=2)
 plt.show()
