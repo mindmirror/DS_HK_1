@@ -34,7 +34,7 @@ otherwise, we know we just need to make a submission, so the output has to be so
 
 from pandas import read_csv, DataFrame
 from sklearn import naive_bayes, cross_validation, metrics
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import
 
 train = read_csv('train-utf8.csv')
 test = read_csv('test-utf8.csv')
