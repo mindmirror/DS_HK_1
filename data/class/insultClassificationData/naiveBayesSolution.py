@@ -1,19 +1,21 @@
 # STEPS WE NEED TO TAKE
 """
 1. Problem: We have text data. We'd like to determine if the text is an insult or not.
-2. trianing data already has been decided if it's insult or not, so we know this can be a supervised Problem
+2. training data already has been decided if it's insult or not, so we know this can be a supervised Problem
 3. since it's text, naive_bayes makes the most sense.
 
 
 ### LOAD DATA
 
 
-### Text data isn't useable in it's form. Ed's said we need to vectorize text in the past?
-Makes more sense to get counts? maybe... a count vectorizer?
+### Text data isn't useable in it's form. We need to vectorize text, does it
+make more sense to get counts? maybe... a count vectorizer?
 
-search text count vectorizer in google, alright, sklearn came up.
+Search 'text count vectorizer' in google. Alright, sklearn came up!
 
-seems like there's a bunch of arguments, but tells me it makes a world count matrix. matrix sounds like a training set, so DONE HERE!
+Seems like there's a bunch of arguments, but tells me it makes a world count matrix.
+Matrix sounds like a training set, so DONE HERE!
+
 Some things I see it also does:
 
 remove stop words. Neat!
@@ -32,7 +34,7 @@ otherwise, we know we just need to make a submission, so the output has to be so
 
 from pandas import read_csv, DataFrame
 from sklearn import naive_bayes, cross_validation, metrics
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import
 
 train = read_csv('train-utf8.csv')
 test = read_csv('test-utf8.csv')
