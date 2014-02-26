@@ -127,6 +127,8 @@ Pruning involves checking pairs of nodes that have a common parent to see if mer
 
 ## Extra Reading
 * [Basic Evaluation Measures for Classifier Performance](http://webdocs.cs.ualberta.ca/~eisner/measures.html)
+* [The Relationship Between Precision-Recall and ROC Curves](https://lirias.kuleuven.be/bitstream/123456789/295592/1/d.)
+
 
 ## Examples
 
