@@ -123,7 +123,7 @@ Pruning involves checking pairs of nodes that have a common parent to see if mer
 
 ## Precision and Recall
 
-![](http://uberpython.wordpress.com/2012/01/01/precision-recall-sensitivity-and-specificity/)
+[Precision recall sensitivity and specificity](http://uberpython.wordpress.com/2012/01/01/precision-recall-sensitivity-and-specificity/)
 
 ## Extra Reading
 * [Basic Evaluation Measures for Classifier Performance](http://webdocs.cs.ualberta.ca/~eisner/measures.html)
