@@ -8,3 +8,5 @@
 [Bayesian Statistical Inference II (MIT)](http://video.mit.edu/watch/lecture-22-bayesian-statistical-inference-ii-13189/)
 [Naive Bayes in SciKit Learn](http://scikit-learn.org/stable/modules/naive_bayes.html)
 [The Optimality of Naive Bayes](http://www.cs.unb.ca/profs/hzhang/publications/FLAIRS04ZhangH.pdf)
+
+![FP/TN](http://www.people.vcu.edu/~albest/DENS580/DawsonTrapp/Chap12_files/loadBinary_024.gif)
