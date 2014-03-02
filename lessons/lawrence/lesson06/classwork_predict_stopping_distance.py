@@ -39,6 +39,6 @@ plt.plot(speed, ridge.predict(speed_squared), color='red')
 plt.show()
 
 """
-Since the log linear model have the highest SSE, it fits the data best, which means the car stopping distance increases
+Since the log linear model have the highest score, it fits the data best, which means the car stopping distance increases
 expoentially as the speed increases.
 """
