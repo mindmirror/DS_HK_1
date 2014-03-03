@@ -7,7 +7,7 @@ Deeper understanding: modeling classes. Can generate data.
 
 ![generative](http://i.stack.imgur.com/27V7I.gif)
 
-Which is the equation you use in generative models. It has the joint probability distribution p(x, y), since p(x, y) = p(x | y) p(y), which explicitly models the actual distribution of each class. With the joint probability distribution function, given an y, you can calculate ("generate") its respective x. For this reason they are called generative models.
+Which is the equation you use in generative models. It has the joint probability distribution p(x, y), since p(x, y) = p(x | y) p(y), which explici tly models the actual distribution of each class. With the joint probability distribution function, given an y, you can calculate ("generate") its respective x. For this reason they are called generative models.
 
 A generative model learns the joint probability distribution p(x,y) and a discriminative model learns the conditional probability distribution p(y|x)
 
@@ -81,18 +81,6 @@ The goal of an SVM is to create the linear decision boundary with the largest ma
 
 Hyperplane: is just a high-dimensional generalization of a line.
 
-### The Kernel Trick
-
-Nonlinear applications of SVM rely on an implicit (nonlinear) mapping Φ that sends vectors from the original feature space K into a higher-dimensional feature space K’.
-
-Nonlinear classification in K is then obtained by creating a linear decision boundary in K’.
-
-In practice, this involves no computations in the higher dimensional space!
-
-![](http://i.stack.imgur.com/1gvce.png)
-_non-linear SVM_
-
-The inner product is an operation that takes two vectors and returns a real number. The fact that we we can rewrite the optimization problem in terms of the inner product means that we don’t actually have to do any calculations in the feature space K . In particular, we can easily change K to be some other space K’.
 
 ## MAXIMUM MARGIN HYPERPLANES
 
@@ -171,7 +159,7 @@ Suppose we need a more complex classifier than a linear decision boundary allows
 ![hyper](https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson11/hyper-transform.png)
 
 Issues :
-a
+
 * Does not scale well: requires many high-dimensional calculations
 * Leads to more complexity (both modeling complexity and computational complexity) than we want.
 
@@ -188,6 +176,19 @@ through the inner product x^{T}x :
 ![](https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson11/dual-form-soft-margin-optimisation.png)
 
 We can replace this inner product with a more general function that has the same type of output as the inner product!
+
+### The Kernel Trick
+
+Nonlinear applications of SVM rely on an implicit (nonlinear) mapping Φ that sends vectors from the original feature space K into a higher-dimensional feature space K’.
+
+Nonlinear classification in K is then obtained by creating a linear decision boundary in K’.
+
+In practice, this involves no computations in the higher dimensional space!
+
+![](http://i.stack.imgur.com/1gvce.png)
+_non-linear SVM_
+
+The inner product is an operation that takes two vectors and returns a real number. The fact that we we can rewrite the optimization problem in terms of the inner product means that we don’t actually have to do any calculations in the feature space K . In particular, we can easily change K to be some other space K’.
 
 Formally, we can think of the inner product as a map that sends two vectors in the feature space K into the real line |R.
 We can replace this with a generalization of the inner product called a kernel function that maps two vectors in a higher-dimensional feature space K’ into |R. The upshot is that we can use a kernel function to implicitly train our model in a higher-dimensional feature space, without incurring additional computational complexity! As long as the kernel function satisfies certain conditions ([Mercer’s theorem](http://en.wikipedia.org/wiki/Mercer's_theorem)), our conclusions above regarding the mmh continue to hold. In other words, no algorithmic changes are necessary, and all the benefits of a linear SVM are maintained.
@@ -216,3 +217,6 @@ SVMs (and kernel methods in general) are versatile, powerful, and popular techni
 * [sklearn.svm.SVC](http://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html)
 * [sklearn.svm.LinearSVC](http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html)
 * [sklearn.svm.SVR](http://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html)
+* [PyML SVM Howto](http://pyml.sourceforge.net/doc/howto.pdf)
+
+
