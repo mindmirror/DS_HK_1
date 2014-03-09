@@ -87,7 +87,7 @@ How do you determine which centroid is the nearest?
 * A similarity measure must satisfy certain general conditions:
   ![](https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson12/similarity.png)
 
-* There are a number of different similarity measures to choose from, and in general the right choice depends on the problem.
+* There are a number of different [similarity measures](http://ag.arizona.edu/classes/rnr555/lecnotes/10.html) to choose from, and in general the right choice depends on the problem.
   * For data that takes values in *|R*^n , the typical choice is the [Euclidean distance](http://en.wikipedia.org/wiki/Euclidean_distance):
   ![](http://upload.wikimedia.org/math/3/e/3/3e31af0e62dd2780540f796b51a0ce4e.png)
 * We can express different semantics about our data through the choice of metric. Ex: One popular metric for text mining problems (or any problem with sparse binary data) is the [Jaccard Coefficient](http://matpalm.com/resemblance/jaccard_coeff/)].
@@ -156,7 +156,7 @@ An alternative validation scheme is given by comparing the similarity matrix wit
 
 ![](https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson12/similaritymatrix.png)
 
-One useful application of cluster validation is to determine the best number of clusters for your dataset. We can do this by computing the overall SSE or SC for different values of K.
+One useful application of cluster validation is to determine the best number of clusters for your dataset. We can do this by computing the overall SSE or [intepreting the Silhouette Coefficient](http://pafnuty.wordpress.com/2013/02/04/interpretation-of-silhouette-plots-clustering/) for different values of K.
 
 ![](https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson12/silhouette.png)
 
@@ -168,7 +168,7 @@ Ultimately, cluster validation and clustering in general are suggestive techniqu
 
 ### Academic
 * [An implementation of the relational k-means algorithm](http://arxiv.org/abs/1304.6899)
-
+* [An efficient k-means algorithm integrated with Jaccard distance measure for document clustering](http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=5340335&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D5340335)
 ### Packages
 * [SciKit Clusting](http://scikit-learn.org/stable/modules/clustering.html)
 * [sklearn.cluster.KMeans](http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html)
