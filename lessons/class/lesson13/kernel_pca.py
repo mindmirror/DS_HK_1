@@ -39,8 +39,8 @@ blues = y == 1
 
 pl.plot(X[reds, 0], X[reds, 1], "ro")
 pl.plot(X[blues, 0], X[blues, 1], "bo")
-pl.xlabel("$x_1$")
-pl.ylabel("$x_2$")
+# pl.xlabel("$x_1$")
+# pl.ylabel("$x_2$")
 
 X1, X2 = np.meshgrid(np.linspace(-1.5, 1.5, 50), np.linspace(-1.5, 1.5, 50))
 X_grid = np.array([np.ravel(X1), np.ravel(X2)]).T
@@ -59,15 +59,15 @@ pl.subplot(2, 2, 3, aspect='equal')
 pl.plot(X_kpca[reds, 0], X_kpca[reds, 1], "ro")
 pl.plot(X_kpca[blues, 0], X_kpca[blues, 1], "bo")
 pl.title("Projection by KPCA")
-pl.xlabel("1st principal component in space induced by $\phi$")
+# pl.xlabel("1st principal component in space induced by $\phi$")
 pl.ylabel("2nd component")
 
 pl.subplot(2, 2, 4, aspect='equal')
 pl.plot(X_back[reds, 0], X_back[reds, 1], "ro")
 pl.plot(X_back[blues, 0], X_back[blues, 1], "bo")
 pl.title("Original space after inverse transform")
-pl.xlabel("$x_1$")
-pl.ylabel("$x_2$")
+# pl.xlabel("$x_1$")
+# pl.ylabel("$x_2$")
 
 pl.subplots_adjust(0.02, 0.10, 0.98, 0.94, 0.04, 0.35)
 
