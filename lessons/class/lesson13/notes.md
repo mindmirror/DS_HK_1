@@ -40,7 +40,7 @@ representation of `X ( k < m )` that (approximately) captures the
 information in the original data, according to some criterion.
 
 * reduce computational expense
-* reduce susceptibility to overfitting
+* reduce susceptibility to overfitting (but regularisation is better)
 * reduce noise in the dataset
 * _enhance our intuition_
 
@@ -93,9 +93,9 @@ off-diagonal elements `C_{ij}` give the covariance between `X_i , X_j (i ≠ j)`
 
 The eigenvalue decomposition of a symmetric matrix `X` is given by:
 
-`X = QΛQ T`
+`X = QΛQ^T`
 
-The columns of Q are the eigenvectors of `X`, and the values in `Λ` are the associated eigenvalues of `X`. For an eigenvector `v` of `X` and its eigenvalue `λ`, we have the important relation: `Av = λv`
+The columns of Q are the eigenvectors of `X`, and the values in `Λ` are the associated eigenvalues of `X`. For an eigenvector `v` of `X` and its eigenvalue `λ`, we have the important relation: `Xv = λv`
 
 The eigenvectors form a basis of the vector space on which `X` acts (eg,
 they are orthogonal). Furthermore the basis elements are ordered by their eigenvalues (from largest to smallest), and these eigenvalues represent the amount of variance explained by each basis element.
@@ -107,23 +107,6 @@ This can be visualized in a scree plot, which shows the amount of variance expla
 ![](https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson13/photodr.png)
 
 _PCA and [image compression](http://glowingpython.blogspot.it/2011/07/pca-and-image-compression-with-numpy.html) with numpy_
-
-## Singular Value Decomposition
-
-Consider a matrix `A` with n rows and d features. The *singular value decomposition* of A is given by:
-
-![](https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson13/svd.png)
-
-![](https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson13/svd2.png)
-
-* st. `U` , `V` are orthogonal matrices and `Σ` is a diagonal matrix.
-  * ![U^{T}U = UU^{T} = I_{n} , V^{T}V = VV^{T} = I_{d} -> Σ_{ij} = 0 (i≠ j)](http://www.sciweavers.org/tex2img.php?eq=U%5E%7BT%7DU%20%3D%20UU%5E%7BT%7D%20%3D%20I_%7Bn%7D%20%2C%20V%5E%7BT%7DV%20%3D%20VV%5E%7BT%7D%20%3D%20I_%7Bd%7D%20-%3E%20%CE%A3_%7Bij%7D%20%3D%200%20%28i%E2%89%A0%20j%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
-* The columns of `U` & `V` are the (left- and right-) singular vectors of `A`.
-* These singular vectors provide orthonormal bases for the spaces `K_n` & `K_d` (columns of `U` & `V`, respectively).
-* The nonzero entries of Σ are the singular values of A . These are real,
-nonnegative, and rank-ordered (decreasing from lest to right).
-* The number of singular values is equal to the rank of A. The rank of a matrix measures its non- degeneracy.
-* For a general SVD, the columns of `U` are the eigenvectors of `AA^{T}` , and the columns of `V` are the eigenvectors of `A^{T}A` .
 
 ## Kernel Methods in Pca
 
