@@ -1,0 +1,233 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body{
+  color:#444;
+  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman',
+              "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
+  font-size:12px;
+  line-height:1.5em;
+  background:#fefefe;
+  width: 45em;
+  margin: 10px auto;
+  padding: 1em;
+  outline: 1300px solid #FAFAFA;
+}
+
+a{ color: #0645ad; text-decoration:none;}
+a:visited{ color: #0b0080; }
+a:hover{ color: #06e; }
+a:active{ color:#faa700; }
+a:focus{ outline: thin dotted; }
+a:hover, a:active{ outline: 0; }
+
+span.backtick {
+  border:1px solid #EAEAEA;
+  border-radius:3px;
+  background:#F8F8F8;
+  padding:0 3px 0 3px;
+}
+
+::-moz-selection{background:rgba(255,255,0,0.3);color:#000}
+::selection{background:rgba(255,255,0,0.3);color:#000}
+
+a::-moz-selection{background:rgba(255,255,0,0.3);color:#0645ad}
+a::selection{background:rgba(255,255,0,0.3);color:#0645ad}
+
+p{
+margin:1em 0;
+}
+
+img{
+max-width:100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-weight:normal;
+color:#111;
+line-height:1em;
+}
+h4,h5,h6{ font-weight: bold; }
+h1{ font-size:2.5em; }
+h2{ font-size:2em; border-bottom:1px solid silver; padding-bottom: 5px; }
+h3{ font-size:1.5em; }
+h4{ font-size:1.2em; }
+h5{ font-size:1em; }
+h6{ font-size:0.9em; }
+
+blockquote{
+color:#666666;
+margin:0;
+padding-left: 3em;
+border-left: 0.5em #EEE solid;
+}
+hr { display: block; height: 2px; border: 0; border-top: 1px solid #aaa;border-bottom: 1px solid #eee; margin: 1em 0; padding: 0; }
+
+
+pre , code, kbd, samp { 
+  color: #000; 
+  font-family: monospace; 
+  font-size: 0.88em; 
+  border-radius:3px;
+  background-color: #F8F8F8;
+  border: 1px solid #CCC; 
+}
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 5px 12px;}
+pre code { border: 0px !important; padding: 0;}
+code { padding: 0 3px 0 3px; }
+
+b, strong { font-weight: bold; }
+
+dfn { font-style: italic; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 2em; }
+li p:last-child { margin:0 }
+dd { margin: 0 0 0 2em; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+@media only screen and (min-width: 480px) {
+body{font-size:14px;}
+}
+
+@media only screen and (min-width: 768px) {
+body{font-size:16px;}
+}
+
+@media print {
+  * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
+  body{font-size:12pt; max-width:100%; outline:none;}
+  a, a:visited { text-decoration: underline; }
+  hr { height: 1px; border:0; border-bottom:1px solid black; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page :left { margin: 15mm 20mm 15mm 10mm; }
+  @page :right { margin: 15mm 10mm 15mm 20mm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style><title>notes</title></head><body><h1 id="dimensionality-reduction">Dimensionality Reduction</h1>
+<p>Dimensionality Reduction is a set of techniques for reducing the size (in terms of features, records, and/or bytes) of the dataset under examination. In general, the idea is to regard the dataset as a matrix and to decompose the matrix into simpler, meaningful pieces. Dimensionality reduction is frequently performed as a pre-processing
+step before another learning algorithm is applied.</p>
+<p>The number of features in our dataset can be difficult to manage, or
+even misleading (eg, if the relationships are actually simpler than they
+appear). For example, suppose we have a dataset with some features that are related to each other. Ideally, we would like to eliminate this redundancy and consolidate the number of variables we’re looking at. If these relationships are linear, then we can use well-established techniques like <code>PCA/SVD</code>.</p>
+<h3 id="consider-this">Consider this</h3>
+<p>Say we have a large room that contains <code>m</code> lights with unique light patterns and <code>n</code> cameras recording them. Using what the cameras record, how do we determine how many lights there are in the room?</p>
+<p><img alt="" src="https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson13/lights.png" /></p>
+<p><em>Setup of two lights and four cameras</em></p>
+<p><img alt="" src="https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson13/lightcapture.png" /></p>
+<p><em>Comparing Data Between Light Capture Cameras</em></p>
+<h3 id="curse-of-dimensionality">Curse of Dimensionality</h3>
+<p>The complexity that comes with a large number of features is due in part to the curse of dimensionality. Namely, the sample size needed to accurately estimate a random variable taking values in a dimensional feature space grows exponentially with the number of features (almost). (More precisely, the sample size grows exponentially with <code>l ≤ features</code>, the dimension of the manifold embedded in the feature space).</p>
+<p>Most of the points in the space are “far” from each other. This illustrates the fact that local methods will break down in these
+circumstances (eg, in order to collect enough neighbors for a given
+point, you need to expand the radius of the neighborhood so far that
+locality is not preserved).</p>
+<p>The bottom line is that high-dimensional spaces can be problematic.</p>
+<h3 id="goals-of-dimensionality-reduction">Goals of Dimensionality Reduction</h3>
+<p>We’d like to analyze the data using the most meaningful basis (or
+coordinates) possible.</p>
+<p>More precisely: given an <code>n x m</code> matrix <code>X</code> (encoding <code>n</code> observations of a <code>m</code>-dimensional random variable), we want to find a <code>k</code>-dimensional
+representation of <code>X ( k &lt; m )</code> that (approximately) captures the
+information in the original data, according to some criterion.</p>
+<ul>
+<li>reduce computational expense</li>
+<li>reduce susceptibility to overfitting</li>
+<li>reduce noise in the dataset</li>
+<li><em>enhance our intuition</em></li>
+</ul>
+<h3 id="approaches-to-dimensionality-reduction">Approaches to Dimensionality Reduction</h3>
+<p>There are two approaches: feature selection and feature extraction.</p>
+<ul>
+<li><em>feature selection</em> – selecting a subset of features using an external
+criterion (filter) or the learning algo accuracy itself (wrapper)</li>
+<li><em>feature extraction</em> – mapping the features to a lower dimensional
+space</li>
+</ul>
+<h4 id="feature-selection">Feature Selection</h4>
+<p><img alt="" src="https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson13/stewise.png" /></p>
+<p><em>Feature selection: Removing features with highest p-values and then
+refitting model (stepwise regression)</em></p>
+<p>Feature selection is important, but typically when people say
+dimensionality reduction, they are referring to feature extraction.</p>
+<h4 id="feature-extraction">Feature Extraction</h4>
+<p>The goal of feature extraction is to create a new set of coordinates
+(often in lower dimension) that simplify the representation of the data.</p>
+<p><img alt="" src="https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson13/featureextraction.png" /></p>
+<h3 id="applications-of-dimensionality-reduction">Applications of Dimensionality Reduction</h3>
+<ul>
+<li>Topic models (document clustering)</li>
+<li>Image recognition/computer vision</li>
+<li>Bioinformatics (microarray analysis)</li>
+<li>Speech recognition</li>
+<li>Astronomy (spectral data analysis)</li>
+<li>Recommender systems</li>
+</ul>
+<h2 id="principal-components-analysis-pca">Principal Components Analysis (PCA)</h2>
+<p>Principal component analysis is a dimension reduction technique that
+can be used on a matrix of any dimensions. This procedure produces a new basis, each of whose components retain as much variance from the original data as possible. The PCA of a matrix <code>X</code> boils down to the eigenvalue decomposition of the covariance matrix of <code>X</code>.</p>
+<p>The covariance matrix <code>C</code> of a matrix <code>X</code> is always symmetric:</p>
+<p><img alt="" src="https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson13/covariancematrix.png" /></p>
+<p>off-diagonal elements <code>C_{ij}</code> give the covariance between <code>X_i , X_j (i ≠ j)</code> diagonal elements <code>C_{ii}</code> give the variance of <code>X_i</code></p>
+<h3 id="eigenvalue-decomposition">EIGENVALUE DECOMPOSITION</h3>
+<p>The eigenvalue decomposition of a symmetric matrix <code>X</code> is given by:</p>
+<p><code>X = QΛQ T</code></p>
+<p>The columns of Q are the eigenvectors of <code>X</code>, and the values in <code>Λ</code> are the associated eigenvalues of <code>X</code>. For an eigenvector <code>v</code> of <code>X</code> and its eigenvalue <code>λ</code>, we have the important relation: <code>Av = λv</code></p>
+<p>The eigenvectors form a basis of the vector space on which <code>X</code> acts (eg,
+they are orthogonal). Furthermore the basis elements are ordered by their eigenvalues (from largest to smallest), and these eigenvalues represent the amount of variance explained by each basis element.</p>
+<p>This can be visualized in a scree plot, which shows the amount of variance explained by each basis vector.</p>
+<p><img alt="" src="https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson13/irisscree.png" /></p>
+<p><img alt="" src="https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson13/photodr.png" /></p>
+<p><em>PCA and <a href="http://glowingpython.blogspot.it/2011/07/pca-and-image-compression-with-numpy.html">image compression</a> with numpy</em></p>
+<h2 id="singular-value-decomposition">Singular Value Decomposition</h2>
+<p>Consider a matrix <code>A</code> with n rows and d features. The <em>singular value decomposition</em> of A is given by:</p>
+<p><img alt="" src="https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson13/svd.png" /></p>
+<p><img alt="" src="https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson13/svd2.png" /></p>
+<ul>
+<li>st. <code>U</code> , <code>V</code> are orthogonal matrices and <code>Σ</code> is a diagonal matrix.</li>
+<li><img alt="U^{T}U = UU^{T} = I_{n} , V^{T}V = VV^{T} = I_{d} -&gt; Σ_{ij} = 0 (i≠ j)" src="http://www.sciweavers.org/tex2img.php?eq=U%5E%7BT%7DU%20%3D%20UU%5E%7BT%7D%20%3D%20I_%7Bn%7D%20%2C%20V%5E%7BT%7DV%20%3D%20VV%5E%7BT%7D%20%3D%20I_%7Bd%7D%20-%3E%20%CE%A3_%7Bij%7D%20%3D%200%20%28i%E2%89%A0%20j%29&amp;bc=White&amp;fc=Black&amp;im=jpg&amp;fs=12&amp;ff=arev&amp;edit=0" />
+*</li>
+</ul>
+<h2 id="kernel-methods-in-pca">Kernel Methods in Pca</h2>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="http://www.snl.salk.edu/~shlens/pca.pdf">A Tutorial on PCA</a></li>
+<li><a href="http://ufldl.stanford.edu/wiki/index.php/PCA">Stanford PCA Tutorial</a></li>
+<li><a href="http://planspace.org/2013/02/03/pca-3d-visualization-and-clustering-in-r/">Aaron's PCA/3d/clustering post</a></li>
+</ul>
+<h2 id="tutorial">Tutorial</h2>
+<ul>
+<li><a href="http://www.snl.salk.edu/~shlens/pca.pdf">A Tutorial on Principal Component Analysis</a></li>
+<li><a href="http://www.math.uwaterloo.ca/~aghodsib/courses/f06stat890/readings/tutorial_stat890.pdf">Dimensionality Reduction A Short Tutorial</a></li>
+</ul>
+<h3 id="extra">Extra</h3>
+<ul>
+<li><a href="http://www.cbcb.umd.edu/~salzberg/docs/murthy_thesis/survey/node16.html">Sample size vs. dimensionality</a></li>
+</ul>
+<h3 id="academic">Academic</h3>
+<ul>
+<li><a href="http://www.stat-d.si/mz/mz2.1/dambra.pdf">Dimensionality Reduction Methods</a></li>
+<li><a href="http://www.cc.gatech.edu/~isbell/tutorials/dimred-survey.pdf">A survey of dimension reduction techniques</a></li>
+</ul>
+<h4 id="sample-size">Sample Size</h4>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Sample_size_determination">Sample size determination</a></li>
+<li><a href="http://bioinformatics.oxfordjournals.org/content/21/8/1509.full.pdf+html">Optimal number of features as a function of sample size for various classiﬁcation rules</a></li>
+<li><a href="http://link.springer.com/content/pdf/10.1186%2F1471-2105-11-447.pdf">Sample size and statistical power considerations in high-dimensionality data settings: a comparative study of classification algorithms</a></li>
+<li><a href="http://smm.sagepub.com/content/early/2011/11/22/0962280211428387.abstract">Some considerations of classification for high dimension low-sample size data</a></li>
+</ul></body></html>
