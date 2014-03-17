@@ -56,7 +56,7 @@ nsemble classifiers can be effective even if the true decision boundary lies out
 
 ### Creating an Ensemble Prediction
 
-![](https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson14/approximation.png)
+![](https://raw.github.com/ga-students/DS_HK_1/gh-pages/lessons/class/lesson14/ensemblecreation.png)
 
 There are several ways to generate base classifiers?
 * manipulating the training set
