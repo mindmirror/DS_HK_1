@@ -3,8 +3,19 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import feature_selection, linear_model
 
+"""
+Domain Knowlegde. You can't tell your SH from your SFs? Time for some Baseball 101!
+
+*Number of home runs*: Number of home runs People want to see home : People want to
+see home runs—home runs are exciting, and teams will pay for players who can hit
+home runs
+*Batting average* (Hits/At Bats): Most common statistic when comparing players
+*Slugging percentage* (Total Bases/At Bats):  Measures the average number of
+bases a player
+"""
+
 # Create a new dataframe
-base = pd.read_csv('./baseball.csv')
+base = pd.read_csv('https://raw.github.com/ga-students/DS_HK_1/gh-pages/data/class/baseballRegressionData/baseball.csv')
 
 # Select numerical feature
 base = pd.DataFrame(base, columns=["HR", "RBI", 'R', "G", "SB", "salary", 'height', 'weight', 'yearID'])
