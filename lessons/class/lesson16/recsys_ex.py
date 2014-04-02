@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/env python
 
 """
 pip install csc-pysparse networkx divisi2
