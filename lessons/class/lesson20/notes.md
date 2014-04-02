@@ -37,26 +37,6 @@ Another important difference, unlike cross sectional models, the order of the da
 * **Trends**, measurements tend to increase or decrease over time
 * **Seasonality / Cyclicality**, An observable cycle in the data (days, years, weeks, secs, etc)
 
-## DIAGNOSTIC TOOLS
-
-**Normality of the errors**
-
-#### Labs : [Residuals plot](https://github.com/ga-students/DS_HK_1/wiki/Lesson-20-:-Time-Series-Analysis#residuals-plot)
-
-**Independence of the errors (serial correlation)**
-
-Indicates that there is room for improvement in our model – there is some association in the data that we are not taking into account. Our tool for this is called an **Autocorrelation plot**
-
-![](https://raw.githubusercontent.com/ga-students/DS_HK_1/eec7d9853a147b2ac0eaeeb7fc908aa2f47f8444/lessons/class/lesson20/assets/ac1.png)
-
-![](https://raw.githubusercontent.com/ga-students/DS_HK_1/eec7d9853a147b2ac0eaeeb7fc908aa2f47f8444/lessons/class/lesson20/assets/ac2.png)
-
-![](https://raw.githubusercontent.com/ga-students/DS_HK_1/eec7d9853a147b2ac0eaeeb7fc908aa2f47f8444/lessons/class/lesson20/assets/ac3.png)
-
-![](https://raw.githubusercontent.com/ga-students/DS_HK_1/eec7d9853a147b2ac0eaeeb7fc908aa2f47f8444/lessons/class/lesson20/assets/ac4.png)
-
-#### Labs : [Sunspots data ACF and PACF (correlograms)](https://github.com/ga-students/DS_HK_1/wiki/Lesson-20-:-Time-Series-Analysis#autocorrelation-and-partial-autocorrelation-in-the-correlogram)
-
 ## AUTOREGRESSIVE MODELS
 
 Autoregressive models use the value at time - 1 to predict the value at time 0
@@ -67,11 +47,11 @@ Autoregressive models use the value at time - 1 to predict the value at time 0
 
 **Multivariate regression**
 
-![Y = α + β_{1}x_{1} + β_{2}x_{2} + β_{3}x_{3} + ε](http://www.sciweavers.org/tex2img.php?eq=Y%20%3D%20%CE%B1%20%2B%20%CE%B2_%7B1%7Dx_%7B1%7D%20%2B%20%CE%B2_%7B2%7Dx_%7B2%7D%20%2B%20%CE%B2_%7B3%7Dx_%7B3%7D%20%2B%20%CE%B5&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+![Y = α + β_{1}x_{1} + β_{2}x_{2} + β_{3}x_{3} + \epsilon](http://www.sciweavers.org/tex2img.php?eq=Y%20%3D%20%CE%B1%20%2B%20%CE%B2_%7B1%7Dx_%7B1%7D%20%2B%20%CE%B2_%7B2%7Dx_%7B2%7D%20%2B%20%CE%B2_%7B3%7Dx_%7B3%7D%20%2B%20%CE%B5&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
 
 **Autoregressive regression AR(1)**
 
-![ \gamma_{i}  =  \phi_{0} +  \phi_{1}\gamma_{i-1} + ε_{i}](http://www.sciweavers.org/tex2img.php?eq=%20%5Cgamma_%7Bi%7D%20%20%3D%20%20%5Cphi_%7B0%7D%20%2B%20%20%5Cphi_%7B1%7D%5Cgamma_%7Bi-1%7D%20%2B%20%CE%B5_%7Bi%7D&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+![ \gamma_{i}  =  \phi_{0} +  \phi_{1}\gamma_{i-1} + \epsilon_{i}](http://www.sciweavers.org/tex2img.php?eq=%20%5Cgamma_%7Bi%7D%20%20%3D%20%20%5Cphi_%7B0%7D%20%2B%20%20%5Cphi_%7B1%7D%5Cgamma_%7Bi-1%7D%20%2B%20%CE%B5_%7Bi%7D&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
 
 * **Yi** : target variable
 * **Φ0** : intercept (~ α, constant)
@@ -85,6 +65,40 @@ Autoregressive models use the value at time - 1 to predict the value at time 0
 
 ### Stationary
 Intuitively, a process {Xt} is stationary if its statistical properties do not change over time. More precisely, the probability distributions of the process are time-invariant.
+
+## DIAGNOSTIC TOOLS
+
+**Normality of the errors**
+
+#### Labs : [Residuals plot](https://github.com/ga-students/DS_HK_1/wiki/Lesson-20-:-Time-Series-Analysis#residuals-plot)
+
+**Independence of the errors (serial correlation)**
+
+Indicates that there is room for improvement in our model – there is some association in the data that we are not taking into account. Our tool for this is called an **Autocorrelation plot**
+
+**Autocorrelation** is the cross-correlation of a signal with itself. It is the similarity between observations as a function of the time lag between them. It is a mathematical tool for finding repeating patterns, such as the presence of a periodic signal obscured by noisel.
+**Partial autocorrelation** is the autocorrelation between z_t and z_{t+k} that is not accounted for by lags 1 to k − 1, inclusive.
+
+If the sample autocorrelation plot indicates that an AR model may be appropriate, then the sample partial autocorrelation plot is examined to help identify the order. One looks for the point on the plot where the partial autocorrelations for all higher lags are essentially zero.
+
+![](https://raw.githubusercontent.com/ga-students/DS_HK_1/eec7d9853a147b2ac0eaeeb7fc908aa2f47f8444/lessons/class/lesson20/assets/ac1.png)
+
+![](https://raw.githubusercontent.com/ga-students/DS_HK_1/eec7d9853a147b2ac0eaeeb7fc908aa2f47f8444/lessons/class/lesson20/assets/ac2.png)
+
+![](https://raw.githubusercontent.com/ga-students/DS_HK_1/eec7d9853a147b2ac0eaeeb7fc908aa2f47f8444/lessons/class/lesson20/assets/ac3.png)
+
+![](https://raw.githubusercontent.com/ga-students/DS_HK_1/eec7d9853a147b2ac0eaeeb7fc908aa2f47f8444/lessons/class/lesson20/assets/ac4.png)
+
+
+The diagnostic patterns of ACF and PACF for an AR(1)  model are:
+* ACF: declines in geometric progression from its highest value at lag 1
+* PACF: cuts off abruptly after lag 1
+
+The opposite types of patterns apply to an MA(1) process:
+* ACF: cuts off abruptly after lag 1
+* PACF: declines in geometric progression from its highest value at lag 1
+
+#### Labs : [Sunspots data ACF and PACF (correlograms)](https://github.com/ga-students/DS_HK_1/wiki/Lesson-20-:-Time-Series-Analysis#autocorrelation-and-partial-autocorrelation-in-the-correlogram)
 
 ### Further Reading
 * **Stationarity**
@@ -101,8 +115,12 @@ Intuitively, a process {Xt} is stationary if its statistical properties do not c
 
 ### Academic
 * [Multivariate ARMAProcesses](http://www.le.ac.uk/users/dsgp1/COURSES/THIRDMET/MYLECTURES/10MULTARMA.pdf)
-
+* [Invertability](http://www.econ.ohio-state.edu/dejong/note2.pdf)
 
 ### Concepts
 [Multivariate ARMA Models](http://reference.wolfram.com/applications/timeseries/UsersGuideToTimeSeries/StationaryTimeSeriesModels/1.2.5.html)
 * [Testing the assumptions of linear regression](http://people.duke.edu/~rnau/testing.htm)
+* [Timeseries](http://www.colorado.edu/geography/class_homepages/geog_4023_s11/Lecture16_TS3.pdf)
+
+### Demo
+* [Subspot Plotting](http://nbviewer.ipython.org/gist/jhemann/4569783)
