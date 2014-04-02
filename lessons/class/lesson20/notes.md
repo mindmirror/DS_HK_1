@@ -111,7 +111,7 @@ The opposite types of patterns apply to an MA(1) process:
 
 #### Labs : [Other things to Play With](https://github.com/ga-students/DS_HK_1/wiki/Lesson-20-:-Time-Series-Analysis#other-things-to-play-with-arma-stationary-processes-unit-root-tests-macroeconomic-data)
 
-## Resources 
+## Resources
 
 ### Academic
 * [Multivariate ARMAProcesses](http://www.le.ac.uk/users/dsgp1/COURSES/THIRDMET/MYLECTURES/10MULTARMA.pdf)
